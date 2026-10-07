@@ -1,123 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>betPawa Aviator - Demo</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>BetPawa Aviator Demo - Win Big</title>
 <style>
-*{box-sizing:border-box;font-family:Inter,Arial,sans-serif;margin:0;padding:0}
-body{background:#0a0e14;color:#fff}
-.top{background:#00d455;padding:16px;display:flex;justify-content:space-between;align-items:center}
-.top b{font-size:22px}
-.bal{background:#0f141c;border-radius:8px;padding:8px 14px;font-size:14px}
-.bal span{color:#00d455;font-weight:800}
-.wrap{max-width:420px;margin:0 auto;background:#0a0e14;min-height:100vh}
-.hist{display:flex;gap:8px;padding:12px;overflow-x:auto}
-.chip{padding:6px 14px;border-radius:20px;font-weight:800;font-size:14px;white-space:nowrap}
-.c1{background:#1a2744;color:#4ade80}.c2{background:#2a2344;color:#fbbf24}.c3{background:#3a1a2a;color:#f472b6}
-.game{position:relative;height:360px;background:radial-gradient(circle at center,#141c2e 0%,#0a0e14 70%);overflow:hidden;border-top:1px solid #1a2340;border-bottom:1px solid #1a2340}
-.grid{position:absolute;inset:0;opacity:.15;background-image:linear-gradient(#1a2340 1px,transparent 1px),linear-gradient(90deg,#1a2340 1px,transparent 1px);background-size:40px 40px}
-.plane{position:absolute;left:20%;top:40%;font-size:36px;transform:rotate(-12deg);filter:drop-shadow(0 0 20px red)}
-.trail{position:absolute;left:0;bottom:40%;width:60%;height:120px;background:radial-gradient(ellipse at left bottom,rgba(255,0,0,.6) 0%,transparent 70%);transform:skewY(-12deg)}
-.mult-box{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center}
-.mult{font-size:76px;font-weight:900;line-height:1; text-shadow:0 0 30px #00d455}
-.status{color:#00d455;font-weight:800;margin-top:6px;letter-spacing:1px}
-.round{color:#6b7280;font-size:12px;margin-top:4px}
-.bets{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px}
-.betcard{background:#121a27;border-radius:14px;padding:12px;border:1px solid #1e2d44}
-.betcard label{font-size:12px;color:#9ca3af}
-.stake{width:100%;margin-top:6px;background:#0a0e14;border:1px solid #1e2d44;border-radius:8px;padding:12px;color:#fff;font-weight:700;font-size:16px}
-.btn{width:100%;margin-top:10px;background:#00d455;color:#000;border:0;border-radius:10px;padding:14px;font-weight:900;font-size:18px;cursor:pointer}
-.btn.cash{background:#facc15}
-.payout{font-size:11px;color:#4ade80;text-align:center;margin-top:8px}
-.nav{display:flex;justify-content:space-around;padding:12px;background:#0f141c;border-top:1px solid #1e2d44;position:sticky;bottom:0}
-.nav div{font-size:11px;color:#6b7280;text-align:center}
-.nav .active{color:#00d455}
-.crashed{color:#ef4444 !important}
+*{box-sizing:border-box;font-family:Arial,sans-serif}
+body{margin:0;background:#0a0e14;color:#fff}
+.top{background:#00d455;padding:12px;display:flex;justify-content:space-between;align-items:center}
+.aff-box{background:linear-gradient(90deg,#00d455,#00a650);padding:14px;text-align:center}
+.aff-btn{display:inline-block;background:#000;color:#00ff88;padding:14px 24px;border-radius:50px;font-weight:900;text-decoration:none;font-size:16px;margin-top:8px;box-shadow:0 4px 20px rgba(0,0,0,.4)}
+.aff-btn span{color:#fff}
+.wrap{max-width:420px;margin:0 auto}
+.hist{display:flex;gap:6px;padding:10px;overflow-x:auto}
+.chip{padding:5px 12px;border-radius:20px;font-weight:800;font-size:13px}
+.game{position:relative;height:300px;background:#0f172a;text-align:center;padding-top:80px}
+.mult{font-size:68px;font-weight:900}
+.bets{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px}
+.card{background:#121a27;border-radius:12px;padding:10px;border:1px solid #1e2d44}
+.stake{width:100%;background:#0a0e14;border:1px solid #1e2d44;border-radius:8px;padding:10px;color:#fff;font-weight:700}
+.btn{width:100%;background:#00d455;color:#000;border:0;border-radius:8px;padding:12px;font-weight:900;margin-top:8px}
 </style>
 </head>
 <body>
 <div class="wrap">
-<div class="top"><b>betPawa</b><div class="bal">Balance: <span id="balance">KES 5,000</span></div></div>
-<div class="hist" id="history"></div>
-<div class="game">
-<div class="grid"></div>
-<div class="trail" id="trail"></div>
-<div class="plane" id="plane">✈️</div>
-<div class="mult-box">
-<div class="mult" id="mult">2.45x</div>
-<div class="status" id="status">FLYING • CASH OUT NOW</div>
-<div class="round" id="round">Round #124758 • 00:03</div>
+<div class="top"><b>betPawa DEMO</b><span id="bal" style="background:#000;padding:6px 10px;border-radius:6px;color:#00ff88">KES 5,000 DEMO</span></div>
+
+<div class="aff-box">
+<div style="font-weight:800;color:#000">🔥 Want to win REAL MONEY?</div>
+<div style="font-size:13px;color:#000;margin-top:4px">Play real Aviator on licensed BetPawa - instant M-Pesa</div>
+<a class="aff-btn" href="PASTE_YOUR_AFFILIATE_LINK_HERE" target="_blank">PLAY REAL AVIATOR → <span>WIN KES</span></a>
+<div style="font-size:10px;color:#000;margin-top:6px;opacity:.8">18+ | Licensed by BCLB | Gamble responsibly</div>
 </div>
-</div>
+
+<div class="hist" id="hist"></div>
+<div class="game"><div class="mult" id="mult">1.00x</div><div id="stat" style="color:#00ff88;font-weight:700">FLYING</div><div id="plane" style="font-size:32px;margin-top:20px">✈️</div></div>
+
 <div class="bets">
-<div class="betcard">
-<label>Bet 1</label><div style="font-size:12px;color:#6b7280">Stake</div>
-<input class="stake" id="bet1" value="100" type="number">
-<button class="btn" id="btn1" onclick="handle(1)">BET</button>
-<div class="payout" id="pay1">Payout at 2.45x = KES 245</div>
+<div class="card"><label>Bet 1</label><input class="stake" id="b1" value="100" type="number"><button class="btn" id="btn1" onclick="bet(1)">BET</button><div id="p1" style="font-size:11px;color:#4ade80;text-align:center;margin-top:6px"></div></div>
+<div class="card"><label>Bet 2</label><input class="stake" id="b2" value="200" type="number"><button class="btn" id="btn2" onclick="bet(2)">BET</button><div id="p2" style="font-size:11px;color:#4ade80;text-align:center;margin-top:6px"></div></div>
 </div>
-<div class="betcard">
-<label>Bet 2</label><div style="font-size:12px;color:#6b7280">Stake</div>
-<input class="stake" id="bet2" value="200" type="number">
-<button class="btn" id="btn2" onclick="handle(2)">BET</button>
-<div class="payout" id="pay2">Payout at 2.45x = KES 490</div>
+
+<div style="padding:12px;font-size:11px;color:#6b7280;text-align:center">This is a FREE demo. For real money, click PLAY REAL AVIATOR above. We earn commission - you pay nothing extra.</div>
 </div>
-</div>
-<div class="nav"><div class="active">🏠<br>Home</div><div>🐾<br>Bets</div><div>🕒<br>History</div><div>⚙️<br>Auto</div><div>☰<br>Menu</div></div>
-</div>
+
 <script>
-let bal=5000, mult=1, flying=false, crash=0, timer=null, bets=[null,null], secs=0;
-let history=[3.12,1.84,15.2,2.13,1.45,8.23];
-function renderHist(){document.getElementById('history').innerHTML=history.map((v,i)=>`<div class="chip c${(i%3)+1}">${v}x</div>`).join('')}
-renderHist();
-function updBal(){document.getElementById('balance').innerText='KES '+bal.toFixed(0)}
-function randCrash(){let r=Math.random();if(r<0.08)return 1+Math.random()*0.3;return Math.min(100,0.99/(1-r))}
-function handle(n){
- if(flying){cash(n);return}
- let amt=parseFloat(document.getElementById('bet'+n).value)||0;
- if(amt>bal||amt<10){alert('Invalid bet');return}
- bal-=amt;updBal();
- bets[n-1]={amt,active:true,cashed:false};
- document.getElementById('btn'+n).innerText='CASH OUT';document.getElementById('btn'+n).classList.add('cash');
-}
-function cash(n){
- let b=bets[n-1];if(!b||!b.active||!flying)return;
- let win=b.amt*mult;bal+=win;updBal();
- b.cashed=true;b.active=false;
- document.getElementById('btn'+n).innerText='BET';document.getElementById('btn'+n).classList.remove('cash');
- document.getElementById('pay'+n).innerText='Won KES '+win.toFixed(0)+' at '+mult.toFixed(2)+'x';
-}
-function start(){
- mult=1;secs=0;crash=randCrash();flying=true;
- bets=[null,null];
- document.getElementById('mult').classList.remove('crashed');
- document.getElementById('status').innerText='FLYING • CASH OUT NOW';
- document.getElementById('status').style.color='#00d455';
- let startT=Date.now();
- timer=setInterval(()=>{
-  secs=(Date.now()-startT)/1000;
-  mult=Math.pow(1.07,secs*2.2);
-  document.getElementById('mult').innerText=mult.toFixed(2)+'x';
-  document.getElementById('round').innerText='Round #124758 • 00:0'+Math.floor(secs%10);
-  document.getElementById('pay1').innerText='Payout at '+mult.toFixed(2)+'x = KES '+( (parseFloat(document.getElementById('bet1').value)||0)*mult ).toFixed(0);
-  document.getElementById('pay2').innerText='Payout at '+mult.toFixed(2)+'x = KES '+( (parseFloat(document.getElementById('bet2').value)||0)*mult ).toFixed(0);
-  document.getElementById('plane').style.left=(15+secs*6)+'%';
-  document.getElementById('plane').style.top=(60-secs*5)+'%';
-  if(mult>=crash){crashNow()}
- },60);
-}
-function crashNow(){
- clearInterval(timer);flying=false;
- document.getElementById('mult').innerText=crash.toFixed(2)+'x';
- document.getElementById('mult').classList.add('crashed');
- document.getElementById('status').innerText='FLEW AWAY!';
- document.getElementById('status').style.color='#ef4444';
- history.unshift(parseFloat(crash.toFixed(2)));renderHist();
- bets.forEach((b,i)=>{if(b&&b.active){document.getElementById('btn'+(i+1)).innerText='BET';document.getElementById('btn'+(i+1)).classList.remove('cash');}});
- setTimeout(start,3500);
-}
-start();
+let bal=5000, m=1, flying=false, crash=0, iv=null, bets=[null,null], hist=[3.12,1.84,15.2,2.5,1.2];
+let hEl=document.getElementById('hist');function rh(){hEl.innerHTML=hist.map(v=>`<div class="chip" style="background:#1e2d44;color:${v>5?'#f472b6':v>2?'#fbbf24':'#4ade80'}">${v}x</div>`).join('')}rh();
+function rc(){let r=Math.random();return r<0.1?1+Math.random()*0.5:0.98/(1-r)}
+function bet(n){if(flying){let b=bets[n-1];if(!b)return;let win=b.amt*m;bal+=win;document.getElementById('bal').innerText='KES '+bal.toFixed(0)+' DEMO';b.active=false;document.getElementById('btn'+n).innerText='BET';document.getElementById('p'+n).innerText='Won '+win.toFixed(0);return}let amt=parseFloat(document.getElementById('b'+n).value);if(amt>bal)return alert('No balance');bal-=amt;document.getElementById('bal').innerText='KES '+bal.toFixed(0)+' DEMO';bets[n-1]={amt,active:true};document.getElementById('btn'+n).innerText='CASH OUT';}
+function start(){m=1;crash=rc();flying=true;let s=Date.now();iv=setInterval(()=>{let e=(Date.now()-s)/1000;m=Math.pow(1.08,e*2);document.getElementById('mult').innerText=m.toFixed(2)+'x';if(m>=crash){clearInterval(iv);flying=false;document.getElementById('mult').innerText=crash.toFixed(2)+'x';document.getElementById('mult').style.color='#ef4444';document.getElementById('stat').innerText='FLEW AWAY';hist.unshift(parseFloat(crash.toFixed(2)));rh();bets=[null,null];document.getElementById('btn1').innerText='BET';document.getElementById('btn2').innerText='BET';setTimeout(()=>{document.getElementById('mult').style.color='#fff';document.getElementById('stat').innerText='FLYING';start()},3000)}},50)}start();
 </script>
 </body>
 </html>
