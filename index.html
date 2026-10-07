@@ -2,53 +2,93 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>BetPawa Aviator Demo - Win Big</title>
+<title>KikuyuBet - Join Africa's Giant</title>
 <style>
-*{box-sizing:border-box;font-family:Arial,sans-serif}
-body{margin:0;background:#0a0e14;color:#fff}
-.top{background:#00d455;padding:12px;display:flex;justify-content:space-between;align-items:center}
-.aff-box{background:linear-gradient(90deg,#00d455,#00a650);padding:14px;text-align:center}
-.aff-btn{display:inline-block;background:#000;color:#00ff88;padding:14px 24px;border-radius:50px;font-weight:900;text-decoration:none;font-size:16px;margin-top:8px;box-shadow:0 4px 20px rgba(0,0,0,.4)}
-.aff-btn span{color:#fff}
-.wrap{max-width:420px;margin:0 auto}
-.hist{display:flex;gap:6px;padding:10px;overflow-x:auto}
-.chip{padding:5px 12px;border-radius:20px;font-weight:800;font-size:13px}
-.game{position:relative;height:300px;background:#0f172a;text-align:center;padding-top:80px}
-.mult{font-size:68px;font-weight:900}
-.bets{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px}
-.card{background:#121a27;border-radius:12px;padding:10px;border:1px solid #1e2d44}
-.stake{width:100%;background:#0a0e14;border:1px solid #1e2d44;border-radius:8px;padding:10px;color:#fff;font-weight:700}
-.btn{width:100%;background:#00d455;color:#000;border:0;border-radius:8px;padding:12px;font-weight:900;margin-top:8px}
+*{box-sizing:border-box;font-family:Arial,sans-serif;margin:0;padding:0}
+body{background:#f2f2f2}
+.top{background:#111;display:flex;justify-content:space-between;align-items:center;padding:10px 14px;color:#fff}
+.logo{font-weight:900;font-size:22px;color:#fff} .logo b{color:#00d455}
+.btns{display:flex;gap:8px}
+.btn-login{border:1px solid #555;background:transparent;color:#fff;padding:6px 14px;border-radius:4px;font-size:12px}
+.btn-join{background:#00d455;color:#000;border:0;padding:6px 14px;border-radius:4px;font-weight:800;font-size:12px}
+.nav{background:#fff;display:flex;gap:16px;padding:10px 14px;border-bottom:1px solid #ddd;font-size:13px;font-weight:700}
+.nav span{color:#666}
+.formbox{max-width:400px;margin:20px auto;background:#fff;padding:16px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.tabs{display:flex;gap:8px;margin-bottom:16px}
+.tab{flex:1;padding:10px;text-align:center;border-radius:6px;font-weight:700;font-size:13px;border:1px solid #ddd;cursor:pointer}
+.tab.active{background:#111;color:#fff}
+label{font-size:12px;color:#555;display:block;margin-top:12px;margin-bottom:4px}
+input,select{width:100%;padding:12px;border:1px solid #ccc;border-radius:6px;font-size:14px}
+input:focus{border-color:#00d455;outline:none}
+.error{color:#e11;font-size:11px;margin-top:4px}
+.keep{display:flex;align-items:center;gap:6px;margin-top:10px;font-size:12px;color:#555}
+.btn-main{width:100%;background:#111;color:#fff;padding:14px;border:0;border-radius:6px;margin-top:16px;font-weight:800;letter-spacing:1px}
+.link{text-align:center;margin-top:12px;font-size:12px;color:#555}
+.link a{color:#111;font-weight:800}
+.greenbar{background:#00d455;color:#000;text-align:center;padding:10px;font-size:12px;font-weight:700}
+.bottom{display:flex;justify-content:space-around;background:#111;color:#aaa;padding:10px 0;font-size:11px;position:fixed;bottom:0;width:100%;max-width:400px;left:50%;transform:translateX(-50%)}
 </style>
 </head>
 <body>
-<div class="wrap">
-<div class="top"><b>betPawa DEMO</b><span id="bal" style="background:#000;padding:6px 10px;border-radius:6px;color:#00ff88">KES 5,000 DEMO</span></div>
+<div style="max-width:400px;margin:0 auto;background:#fff;min-height:100vh;position:relative;padding-bottom:60px">
+<div class="top"><div class="logo">KIKUYU<b>BET</b></div><div class="btns"><button class="btn-login">LOGIN</button><button class="btn-join">JOIN NOW</button></div></div>
+<div class="nav"><span>⚽ SPORTS</span><span>LIVE</span><span>CASINO</span><span>AVIATOR</span></div>
 
-<div class="aff-box">
-<div style="font-weight:800;color:#000">🔥 Want to win REAL MONEY?</div>
-<div style="font-size:13px;color:#000;margin-top:4px">Play real Aviator on licensed BetPawa - instant M-Pesa</div>
-<a class="aff-btn" href="PASTE_YOUR_AFFILIATE_LINK_HERE" target="_blank">PLAY REAL AVIATOR → <span>WIN KES</span></a>
-<div style="font-size:10px;color:#000;margin-top:6px;opacity:.8">18+ | Licensed by BCLB | Gamble responsibly</div>
+<div class="formbox">
+<div class="tabs"><div class="tab active" onclick="switchTab('login')">→ Log In</div><div class="tab" onclick="switchTab('join')">Join Now</div></div>
+
+<div id="loginForm">
+<label>Mobile Number</label>
+<div style="display:flex"><div style="background:#eee;padding:12px;border:1px solid #ccc;border-right:0;border-radius:6px 0 0 6px;font-size:14px">🇰🇪 +254</div><input id="lmobile" placeholder="7XXXXXXX" style="border-radius:0 6px 6px 0"></div>
+<div id="lmobileErr" class="error"></div>
+
+<label>Password</label><input id="lpass" type="password" placeholder="Min. 4 Characters">
+<div class="keep"><input type="checkbox"> Keep me logged on this device</div>
+<button class="btn-main" onclick="login()">LOG IN</button>
+<div class="link"><a href="#">Forgot Password?</a></div>
 </div>
 
-<div class="hist" id="hist"></div>
-<div class="game"><div class="mult" id="mult">1.00x</div><div id="stat" style="color:#00ff88;font-weight:700">FLYING</div><div id="plane" style="font-size:32px;margin-top:20px">✈️</div></div>
-
-<div class="bets">
-<div class="card"><label>Bet 1</label><input class="stake" id="b1" value="100" type="number"><button class="btn" id="btn1" onclick="bet(1)">BET</button><div id="p1" style="font-size:11px;color:#4ade80;text-align:center;margin-top:6px"></div></div>
-<div class="card"><label>Bet 2</label><input class="stake" id="b2" value="200" type="number"><button class="btn" id="btn2" onclick="bet(2)">BET</button><div id="p2" style="font-size:11px;color:#4ade80;text-align:center;margin-top:6px"></div></div>
+<div id="joinForm" style="display:none">
+<label>Mobile Number</label>
+<div style="display:flex"><div style="background:#eee;padding:12px;border:1px solid #ccc;border-right:0;border-radius:6px 0 0 6px;font-size:14px">🇰🇪 +254</div><input id="jmobile" placeholder="Enter without 0 e.g. 7XXXXXXXX"></div>
+<label>Password</label><input id="jpass" type="password" placeholder="Min. 4 Characters">
+<label>First Name</label><input id="fname">
+<label>Last Name</label><input id="lname">
+<label>Location</label><select><option>Select district - Kiambu</option><option>Kikuyu</option><option>Nairobi</option><option>Nakuru</option><option>Mombasa</option><option>Uganda - Kampala</option></select>
+<label>Nationality</label><select><option>Kenyan</option><option>Ugandan</option></select>
+<div class="keep"><input type="checkbox" checked> By creating account you accept Terms</div>
+<button class="btn-main" onclick="join()">JOIN NOW</button>
 </div>
 
-<div style="padding:12px;font-size:11px;color:#6b7280;text-align:center">This is a FREE demo. For real money, click PLAY REAL AVIATOR above. We earn commission - you pay nothing extra.</div>
+<div class="link" style="margin-top:16px">Don't have an account? <a href="#" onclick="switchTab('join');return false">Join Now</a></div>
+</div>
+
+<div class="greenbar">Add legs for up to a 1250% Win Bonus.</div>
+<div class="bottom"><div>Menu</div><div>Sports</div><div style="color:#00d455">Betslip</div><div>Join Now</div><div>Account</div></div>
 </div>
 
 <script>
-let bal=5000, m=1, flying=false, crash=0, iv=null, bets=[null,null], hist=[3.12,1.84,15.2,2.5,1.2];
-let hEl=document.getElementById('hist');function rh(){hEl.innerHTML=hist.map(v=>`<div class="chip" style="background:#1e2d44;color:${v>5?'#f472b6':v>2?'#fbbf24':'#4ade80'}">${v}x</div>`).join('')}rh();
-function rc(){let r=Math.random();return r<0.1?1+Math.random()*0.5:0.98/(1-r)}
-function bet(n){if(flying){let b=bets[n-1];if(!b)return;let win=b.amt*m;bal+=win;document.getElementById('bal').innerText='KES '+bal.toFixed(0)+' DEMO';b.active=false;document.getElementById('btn'+n).innerText='BET';document.getElementById('p'+n).innerText='Won '+win.toFixed(0);return}let amt=parseFloat(document.getElementById('b'+n).value);if(amt>bal)return alert('No balance');bal-=amt;document.getElementById('bal').innerText='KES '+bal.toFixed(0)+' DEMO';bets[n-1]={amt,active:true};document.getElementById('btn'+n).innerText='CASH OUT';}
-function start(){m=1;crash=rc();flying=true;let s=Date.now();iv=setInterval(()=>{let e=(Date.now()-s)/1000;m=Math.pow(1.08,e*2);document.getElementById('mult').innerText=m.toFixed(2)+'x';if(m>=crash){clearInterval(iv);flying=false;document.getElementById('mult').innerText=crash.toFixed(2)+'x';document.getElementById('mult').style.color='#ef4444';document.getElementById('stat').innerText='FLEW AWAY';hist.unshift(parseFloat(crash.toFixed(2)));rh();bets=[null,null];document.getElementById('btn1').innerText='BET';document.getElementById('btn2').innerText='BET';setTimeout(()=>{document.getElementById('mult').style.color='#fff';document.getElementById('stat').innerText='FLYING';start()},3000)}},50)}start();
+function switchTab(t){
+ document.getElementById('loginForm').style.display=t==='login'?'block':'none';
+ document.getElementById('joinForm').style.display=t==='join'?'block':'none';
+ document.querySelectorAll('.tab').forEach((el,i)=>{el.classList.toggle('active',(t==='login'&&i===0)||(t==='join'&&i===1))})
+}
+function login(){
+ let m=document.getElementById('lmobile').value;
+ let p=document.getElementById('lpass').value;
+ let err=document.getElementById('lmobileErr');
+ if(m.length<9||m.length>10){err.innerText='Your mobile number should be 9-10 digits';return}
+ if(p.length<4){alert('Password min 4 chars');return}
+ alert('DEMO LOGIN SUCCESS\\nMobile: '+m+'\\n\\nThis is demo only - no real betPawa account');
+ // go to your aviator
+ window.location.href='aviator.html';
+}
+function join(){
+ let m=document.getElementById('jmobile').value;
+ if(m.length<9){alert('Please enter your mobile phone number');return}
+ alert('DEMO ACCOUNT CREATED\\nWelcome '+document.getElementById('fname').value+'\\n\\nThis is KikuyuBet DEMO - not real betPawa. Now you can play aviator demo.');
+ window.location.href='aviator.html';
+}
 </script>
 </body>
 </html>
